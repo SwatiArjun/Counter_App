@@ -1,0 +1,27 @@
+document.addEventListener("Counter", init);
+
+let count = Number(sessionStorage.getItem("count")) || 0;
+
+function init(){
+    document.getElementById("count").textContent = count;
+}
+
+function increaseCount(){
+    count++;
+    updateCount();
+}
+
+function dereaseCount(){
+    count--;
+    updateCount();
+}
+
+function resetCount(){
+    count = 0;
+    updateCount();
+}
+
+function  updateCount(){
+    document.getElementById("count").textContent = count;
+    sessionStorage.setItem("count", count);
+}
